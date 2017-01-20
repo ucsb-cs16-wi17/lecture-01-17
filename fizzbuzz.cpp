@@ -6,6 +6,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -22,10 +23,11 @@ void fizzbuzz(int n){
 
 
 int main(int argc, char * argv[]){
-    cout<<"Number of arguments to main :"<<argc<<endl;
-    for(int x=0;x<argc;x++)
-        cout<<"argv :"<< x<< " " <<argv[x]<<endl;
 
+    if(argc !=2){
+        cerr<<"Usage : "<<argv[0]<< " <number>"<<endl;
+        exit(2); //Failed 
+    }
     fizzbuzz(stoi(argv[1]));
     return 0;
 }
